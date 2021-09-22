@@ -10,13 +10,14 @@ services:
         - ./dags:/usr/local/airflow/dags
         - ./include:/usr/local/airflow/include
     ports:
-      - 8080:8080
+      - 5000:5000
     networks:
       - backend
     restart: always
     depends_on:
-      - mysqldb
-  mysqldb:
+      - mysql_db
+
+  mysql_db:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: helloworld
@@ -24,6 +25,18 @@ services:
     container_name: mysql_container
     ports:
       - 3306:3306
+    networks:
+      - backend
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOST: mysql_db
+      PMA_USER: root
+      PMA_PASSWORD: helloworld
+    ports:
+      - "8080:80"
     networks:
       - backend
 
