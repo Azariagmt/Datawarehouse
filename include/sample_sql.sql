@@ -1,0 +1,4 @@
+-- CREATE DATABASE sample_db;
+-- USE sample_db;
+-- DROP TABLE IF EXISTS event_stats_staging;
+-- CREATE TABLE event_stats_staging
