@@ -1,16 +1,17 @@
 version: "3"
+
 services:
   webserver:
     build:
       context: ./airflow_docker
       dockerfile: DockerFile
     image: puckel/docker-airflow:latest
-    container_name: test_container_test
+    container_name: airflow_container
     volumes:
         - ./dags:/usr/local/airflow/dags
         - ./include:/usr/local/airflow/include
     ports:
-      - 5000:5000
+      - 5000:8080
     networks:
       - backend
     restart: always
@@ -24,7 +25,7 @@ services:
       MYSQL_DATABASE: newdb
     container_name: mysql_container
     ports:
-      - 3306:3306
+      - 3307:3307
     networks:
       - backend
 
