@@ -25,7 +25,7 @@ services:
       MYSQL_DATABASE: newdb
     container_name: mysql_container
     ports:
-      - 3307:3307
+      - 3307:3306
     networks:
       - backend
 
