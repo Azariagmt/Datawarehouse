@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: transform_I80_stations_summary
+    columns:
+      - name: ID
+        description: Unique identifier for a transit station
+        tests:
+          - not_null
