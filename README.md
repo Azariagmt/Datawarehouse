@@ -1,9 +1,9 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+ <img width=200px height=200px src="./static/Logo.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Project Title</h3>
+<h3 align="center">DWH</h3>
 
 <div align="center">
 
@@ -16,7 +16,7 @@
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> Data Warehouse and ETL project for traffic PEMS dataset.
     <br> 
 </p>
 
@@ -97,16 +97,14 @@ Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Python](https://www.python.org/) - Programming Language
+- [Airflow](https://airflow.apache.org/) - Automation
+- [DBT](https://www.getdbt.com/) - Data Transformation handler
+- [Redshift](https://redash.io/) - Reporting environment
 
 ## ✍️ Authors <a name = "authors"></a>
-
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+- [@10xac](https://github.com/10xac) Idea & resources
+- [@Azariagmt](https://github.com/Azariagmt) Initial work
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
