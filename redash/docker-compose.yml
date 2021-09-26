@@ -11,7 +11,7 @@ services:
     <<: *redash-service
     command: server
     ports:
-      - "5000:5000"
+      - "3500:5000"
     environment:
       REDASH_WEB_WORKERS: 4
   scheduler:
@@ -48,7 +48,7 @@ services:
   nginx:
     image: redash/nginx:latest
     ports:
-      - "3500:80"
+      - "3300:80"
     depends_on:
       - server
     links:
