@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_I80_stations
+    columns:
+      - name: ID
+
+  - name: stg_station_summary
+    columns:
+      - name: ID
+        tests:
+          - unique
+          - not_null
