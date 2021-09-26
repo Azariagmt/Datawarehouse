@@ -24,40 +24,58 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
+- [TODO](./TODO.md)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+Reusable modular ELT project consisting of building a data warehouse using MySQL, doing transformations using DBT and reporting using redash.
 ![ELT diagram](./static/ELT.png)
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
+You can find the live DBT dashboard with generated lineage-graphs at [10academywarehouse.netlify.app](https://10academywarehouse.netlify.app/#!/overview).
+
 ### Prerequisites
 
 What things you need to install the software and how to install them.
-
+<br>
+In a linux environment
 ```
-Give examples
+sudo snap install docker
 ```
+Windows or Mac: Get Docker from [here](https://docs.docker.com/get-docker/).
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
+Steps that tell you how to get a development env running.
 
-Say what the step will be
+clone the repository
+```
+git clone https://github.com/Azariagmt/Datawarehouse
+```
+Get mysql, airflow, phpmyadmin and dbt containers up and running
+```
+docker-compose up
+```
+Get the reporting dashboard up and running
+```
+cd redash
+```
+```
+docker-compose up
+```
 
-```
-Give the example
-```
+
+<!-- 
+
+  cd data
+  dvc pull
 
 And repeat
 
@@ -85,15 +103,16 @@ Explain what these tests test and why
 
 ```
 Give an example
-```
+``` -->
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+* navigate to localhost 5000 to access airflow
+* trigger dag to load data into running datawarehouse
+* Navigate to localhost 8080 to access phpmyadmin and see if data has been loaded into specified table
+* trigger dbt run command from within airflow
+* docker-exec into dbt container
 
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -109,5 +128,9 @@ Add additional notes about how to deploy this on a live system.
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
 - Hat tip to anyone whose code was used
-- Inspiration
-- References
+- References  
+[Installing DBT](https://docs.getdbt.com/dbt-cli/installation/#pip)  
+[DBT videos](https://www.youtube.com/playlist?list=PLy4OcwImJzBLJzLYxpxaPUmCWp8j1esvT)  
+[DBT tutorial](https://www.startdataengineering.com/post/dbt-data-build-tool-tutorial/)  
+[Setting up redash](https://medium.com/@ikishan/creating-a-new-age-dashboard-with-self-hosted-open-source-redash-41e91434390)  
+[Getting started with Redash](https://www.youtube.com/watch?v=Yn3_QDk2qQM&t=10s)  
