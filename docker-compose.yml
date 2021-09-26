@@ -16,16 +16,16 @@ services:
       - backend
     restart: always
     depends_on:
-      - mysql_db
+      - mysql
 
-  mysql_db:
+  mysql:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: helloworld
       MYSQL_DATABASE: newdb
     container_name: mysql_container
     ports:
-      - 3307:3307
+      - 3307:3306
     networks:
       - backend
 
@@ -33,13 +33,16 @@ services:
     image: phpmyadmin/phpmyadmin:latest
     restart: always
     environment:
-      PMA_HOST: mysql_db
+      PMA_HOST: mysql
       PMA_USER: root
       PMA_PASSWORD: helloworld
+      UPLOAD_LIMIT: 300M
     ports:
       - "8080:80"
     networks:
       - backend
+    volumes:
+      - ./php-make/upload.ini:/usr/local/etc/php/php.ini
 
 networks:
   backend:
