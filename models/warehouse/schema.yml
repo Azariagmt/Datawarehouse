@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: testdb
+    description: '10 Academy MySQL warehouse '
+    tables:
+      - name: richards
+        description: 'Richards CSV file in sql Database '
+
+
