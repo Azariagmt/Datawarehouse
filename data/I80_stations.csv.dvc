@@ -1,0 +1,4 @@
+outs:
+- md5: ab8af27fc54b531bbd4719e80d926a1b
+  size: 5359
+  path: I80_stations.csv
