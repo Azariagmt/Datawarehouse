@@ -139,6 +139,8 @@ Give an example
 - [Airflow](https://airflow.apache.org/) - Automation
 - [DBT](https://www.getdbt.com/) - Data Transformation handler
 - [Redshift](https://redash.io/) - Reporting environment
+- [DVC](https://dvc.org/) - Data version control
+- [Superset](https://superset.apache.org/) - Migrated reporting environment
 
 ## ✍️ Authors <a name = "authors"></a>
 - [@10xac](https://github.com/10xac) Idea & resources
@@ -153,3 +155,6 @@ Give an example
 [DBT tutorial](https://www.startdataengineering.com/post/dbt-data-build-tool-tutorial/)  
 [Setting up redash](https://medium.com/@ikishan/creating-a-new-age-dashboard-with-self-hosted-open-source-redash-41e91434390)  
 [Getting started with Redash](https://www.youtube.com/watch?v=Yn3_QDk2qQM&t=10s)  
+[redash query export](https://gist.github.com/arikfr/598590356c4da18be976)
+[Installing superset](https://superset.apache.org/docs/installation/installing-superset-using-docker-compose)
+[](https://stackoverflow.com/q/49194719/13011799)

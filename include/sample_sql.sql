@@ -1,1 +1,2 @@
-r"""DROP TABLE IF EXISTS i80_stations;"""
+DROP TABLE IF EXISTS `zuzu`;
+
