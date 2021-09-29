@@ -6,12 +6,12 @@ services:
       context: ./airflow_docker
       dockerfile: DockerFile
     image: puckel/docker-airflow:latest
-    container_name: airflow_container
+    container_name: az_airflow_container
     volumes:
         - ./dags:/usr/local/airflow/dags
         - ./include:/usr/local/airflow/include
     ports:
-      - 5000:8080
+      - 9003:8080
     networks:
       - backend
     restart: always
@@ -23,9 +23,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: helloworld
       MYSQL_DATABASE: newdb
-    container_name: mysql_container
+    container_name: az_mysql_container
     ports:
-      - 3307:3306
+      - 9004:3306
     networks:
       - backend
 
@@ -38,7 +38,7 @@ services:
       PMA_PASSWORD: helloworld
       UPLOAD_LIMIT: 300M
     ports:
-      - "8080:80"
+      - "9002:80"
     networks:
       - backend
     volumes:
@@ -46,7 +46,7 @@ services:
 
   warehouse:
     image: postgres:12.2
-    container_name: warehouse
+    container_name: az_warehouse
     restart: always
     environment:
       POSTGRES_DB: warehouse
@@ -59,12 +59,12 @@ services:
   
   superset:
     image: tylerfowler/superset
-    container_name: superset
+    container_name: az_superset
     restart: always
     environment:
       MAPBOX_API_KEY: ${MAPBOX_API_KEY}
     ports:
-      - "8088:8088"
+      - "9001:8088"
 
 # dbt container
 networks:
