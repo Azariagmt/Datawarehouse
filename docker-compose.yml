@@ -19,7 +19,7 @@ services:
       - mysql
 
   mysql:
-    image: mysql:5.7
+    image: mysql:8.0.26
     environment:
       MYSQL_ROOT_PASSWORD: helloworld
       MYSQL_DATABASE: newdb
@@ -43,6 +43,29 @@ services:
       - backend
     volumes:
       - ./php-make/upload.ini:/usr/local/etc/php/php.ini
+
+  warehouse:
+    image: postgres:12.2
+    container_name: warehouse
+    restart: always
+    environment:
+      POSTGRES_DB: warehouse
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: sde
+    volumes:
+      # - ./data:/data
+      - /include/sample_sql.sql:/docker-entrypoint-initdb.d/init.sql
+
+  
+  superset:
+    image: tylerfowler/superset
+    container_name: superset
+    restart: always
+    environment:
+      MAPBOX_API_KEY: ${MAPBOX_API_KEY}
+    ports:
+      - "8088:8088"
+
 # dbt container
 networks:
   backend:
