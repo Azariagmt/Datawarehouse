@@ -45,11 +45,22 @@ You can find the live DBT dashboard with generated lineage-graphs at [10academyw
 
 What things you need to install the software and how to install them.
 <br>
+
+#### Docker
 In a linux environment
 ```
 sudo snap install docker
 ```
 Windows or Mac: Get Docker from [here](https://docs.docker.com/get-docker/).
+
+#### Git
+Get Git from [here](https://git-scm.com/downloads).
+
+#### DVC
+To load in the data lets install DVC
+```
+pip install dvc[gdrive]
+```
 
 ### Installing
 
@@ -58,6 +69,13 @@ Steps that tell you how to get a development env running.
 clone the repository
 ```
 git clone https://github.com/Azariagmt/Datawarehouse
+```
+```
+cd Datawarehouse
+```
+Pull necessary data
+```
+dvc pull
 ```
 Get mysql, airflow, phpmyadmin and dbt containers up and running
 ```
@@ -108,6 +126,7 @@ Give an example
 ## 🎈 Usage <a name="usage"></a>
 
 * navigate to localhost 5000 to access airflow
+* Create connection to running database config with name mysql-connect
 * trigger dag to load data into running datawarehouse
 * Navigate to localhost 8080 to access phpmyadmin and see if data has been loaded into specified table
 * trigger dbt run command from within airflow
