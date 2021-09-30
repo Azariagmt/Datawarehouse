@@ -65,4 +65,13 @@ class MySqlToPostgresOperator(BaseOperator):
                     f"{row_count} row(s) inserted into {self.postgres_table}."
                 )
 
-        
+
+mysql_tables = MySqlToPostgresOperator(
+        task_id="porting_tables",
+        sql="compare_database_schemas/mysql_tables.sql",
+        postgres_table="remote_tables",
+        postgres_conn_id="postgres-connect",
+        mysql_conn_id="mysql-connect",
+        # params={"brand": name, "schema": schema, "db_name": db_name},
+        # on_failure_callback=notify_slack_failure,
+    )
