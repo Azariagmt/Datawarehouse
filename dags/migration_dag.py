@@ -66,8 +66,16 @@ class MySqlToPostgresOperator(BaseOperator):
                 )
 
 
+default_arg = {'owner': 'airflow', 'start_date': '2020-02-28'}
+
+dag = DAG('migrate-data',
+          default_args=default_arg,
+          schedule_interval='@once',
+          template_searchpath=['/usr/local/airflow/include/'])
+
 mysql_tables = MySqlToPostgresOperator(
-        task_id="porting_tables",
+        dag=dag,
+        task_id="migrating_tables",
         sql="compare_database_schemas/mysql_tables.sql",
         postgres_table="remote_tables",
         postgres_conn_id="postgres-connect",
@@ -75,3 +83,5 @@ mysql_tables = MySqlToPostgresOperator(
         # params={"brand": name, "schema": schema, "db_name": db_name},
         # on_failure_callback=notify_slack_failure,
     )
+
+mysql_tables
