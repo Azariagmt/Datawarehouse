@@ -1,0 +1,14 @@
+{
+    "mysql-connect":{
+        "conn_type": "mysql",
+        "host": "172.1.0.1",
+        "login": "root",
+        "password": "helloworld",
+        "schema": "testdb",
+        "port": 3307,
+        "extra": "{\"local_infile\": true}"
+    },
+    "pgsql-connect":{
+        "conn_type": "pgsql"
+    }
+}
