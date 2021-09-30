@@ -1,9 +1,0 @@
-version: 2
-
-models:
-  - name: newdb
-    description: 'dummy database to be changed later '
-    database: newdb
-    tables:
-      - name: test_table
-        description: 'test table for testdb database'
