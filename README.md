@@ -157,4 +157,5 @@ Give an example
 [Getting started with Redash](https://www.youtube.com/watch?v=Yn3_QDk2qQM&t=10s)  
 [redash query export](https://gist.github.com/arikfr/598590356c4da18be976)
 [Installing superset](https://superset.apache.org/docs/installation/installing-superset-using-docker-compose)
-[](https://stackoverflow.com/q/49194719/13011799)
+[caching_sha2_password error](https://stackoverflow.com/q/49194719/13011799)
+[Allow local infile loading](https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client)
