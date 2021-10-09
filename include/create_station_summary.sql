@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS station_summary(ID int,flow_99 int,flow_max int,flow_median int,flow_total int,n_obs int);

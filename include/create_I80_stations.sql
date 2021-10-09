@@ -1,1 +1,20 @@
-CREATE TABLE IF NOT EXISTS I80_stations(ID int,flow_99 int,flow_max int,flow_median int,flow_total int,n_obs int);
+CREATE TABLE IF NOT EXISTS I80_stations
+(   ID int,
+    Fwy int,
+    Dir CHAR(20),
+    District int,
+    County int,
+    City FLOAT,
+    State_PM FLOAT,
+    Abs_PM FLOAT,
+    Latitude FLOAT,
+    Longitude FLOAT,
+    Length FLOAT,
+    Type CHAR(20),
+    Lanes int,
+    Name CHAR(20),
+    User_ID_1 CHAR(30),
+    User_ID_2 CHAR(30),
+    User_ID_3 CHAR(30),
+    User_ID_4 CHAR(30)
+);
